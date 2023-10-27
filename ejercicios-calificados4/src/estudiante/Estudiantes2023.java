@@ -56,13 +56,42 @@ public class Estudiantes2023 {
 	}
 
     public Estudiante obtener(int pos) {
-	//Introduce c�digo
         return null;
     }
+    
+    public void sumarPensiones() {
+    	double sumatotal=0;
+    	
+    	for (Estudiante estudiante : estudiantes) {
+			sumatotal+=estudiante.getPension();
+		}
+    	System.out.println("La suma total de las pensiones es:"+sumatotal);
+    }
+
 
     public Estudiante buscar(int codigo) {
-	//Introduce c�digo        
-	  return null;
+	 Scanner scanner = new Scanner(System.in);
+
+    	System.out.println("Ingrese el codigo del estudiante: ");
+        	  int codigoBuscar = scanner.nextInt();
+        	  
+        	  for (Estudiante estudiante : estudiantes) {
+				if(estudiante.getCodigo()==codigoBuscar) {
+					System.out.println("Se ha encontrado: Codigo " + estudiante.getCodigo());
+					break;
+				}
+        	  }
+        	  Scanner scanner1 = new Scanner(System.in);
+
+          	System.out.println("Ingrese el apellido del estudiante a elimminar: ");
+              	 String codigoBuscar1 = scanner1.nextLine();
+              	  
+              	  for (Estudiante estudiante : estudiantes) {
+      				if(estudiante.getNombre()==codigoBuscar1) {
+      					System.out.println("Se ha encontrado: Apellido"+ estudiante.getNombre());
+      					break;
+      				}
+         	}
     }
 
     public int tamano() {
